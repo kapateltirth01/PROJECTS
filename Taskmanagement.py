@@ -9,7 +9,7 @@ def task():
     print("Your tasks are successfully added to today's list\n")
     print(f"Your today's task are {task}")
 
-    t=int(input("How do you want to change anything in your tasks?\n press 1 for yes\t"))
+    t=int(input("How do you want to change anything in your tasks?\npress 1 for yes : "))
     if t==1:
         while True:
             operation=int(input("Enter 1.Update,2.Add,3.Delete,4.View,5.Exit/Stop.:"))
@@ -25,12 +25,17 @@ def task():
                     new=input("addtask\t ")
                     task[ind]=new
                     print(f"New task list is {task}\n")
+                else:
+                     print("This task doesn't exist in your to-do ")
+
 
             elif operation==3:
                 rem = input("What do you want to delete? :")
                 if rem in task:
                     ind=task.index(rem)
                     del task[ind]
+                else:
+                    print("This task doesn't exist in your to-do ")
 
                 print(f"list of tasks:{task}\n")
             elif operation==4:
